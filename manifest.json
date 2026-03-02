@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Kwork Order Collector",
+  "version": "1.0",
+  "description": "Сбор переписки и данных по завершённым заказам Kwork в формате raw.md",
+  "permissions": [],
+  "host_permissions": [
+    "https://kwork.ru/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://kwork.ru/track*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Kwork Order Collector"
+  }
+}
